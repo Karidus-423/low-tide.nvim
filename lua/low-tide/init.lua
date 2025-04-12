@@ -57,6 +57,7 @@ M.opts = {
 }
 
 function M.setup(opts)
+	vim.g.colors_name = "low-tide"
 	if opts.transparent_bg == true then
 		vim.api.nvim_set_hl(0, "NormalFloat",
 			{ background = "None", foreground = "None" })
