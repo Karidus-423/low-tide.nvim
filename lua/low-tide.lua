@@ -1,8 +1,11 @@
 local palette = {
 	silver_sand = "#B5BFC8",
 	artichoke = "#9E9A7A",
+	shadow = "#877a6a",
 	axolotl = "#798e6b",
+	new = "#718999",
 	xanadu = "#6a877a",
+	old_lavender = "#876a77",
 	feldgrau = "#3F6152",
 	cadet = "#556875",
 	japanese_indigo = "#294C3F",
@@ -19,6 +22,8 @@ local apply = function()
 		{ background = "None", foreground = palette.xanadu })
 	vim.api.nvim_set_hl(0, "Special",
 		{ background = "None", foreground = palette.artichoke })
+	vim.api.nvim_set_hl(0, "Type",
+		{ background = "None", foreground = palette.new })
 	vim.api.nvim_set_hl(0, "Visual",
 		{ background = palette.feldgrau, foreground = "None" })
 	vim.api.nvim_set_hl(0, "Normal",
@@ -35,6 +40,10 @@ local apply = function()
 		{ background = palette.feldgrau, foreground = "None" })
 	vim.api.nvim_set_hl(0, "IncSearch",
 		{ background = palette.cadet, foreground = "None" })
+	vim.api.nvim_set_hl(0, "PreProc",
+		{ background = "None", foreground = palette.shadow })
+	vim.api.nvim_set_hl(0, "DiagnosticError",
+		{ background = "None", foreground = palette.old_lavender })
 end
 
 apply()
