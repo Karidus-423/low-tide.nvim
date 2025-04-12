@@ -14,7 +14,10 @@ local palette = {
 	outer_space = "#303E37",
 }
 
-local apply = function()
+local M = {}
+
+function M.Paint()
+	vim.g.colors_name = "low-tide"
 	vim.api.nvim_set_hl(0, "Constant",
 		{ background = "None", foreground = palette.axolotl })
 	vim.api.nvim_set_hl(0, "Identifier",
@@ -28,10 +31,6 @@ local apply = function()
 	vim.api.nvim_set_hl(0, "Visual",
 		{ background = palette.feldgrau, foreground = "None" })
 	vim.api.nvim_set_hl(0, "Normal",
-		{ background = "None", foreground = "None" })
-	vim.api.nvim_set_hl(0, "NormalFloat",
-		{ background = "None", foreground = "None" })
-	vim.api.nvim_set_hl(0, "FloatBorder",
 		{ background = "None", foreground = "None" })
 	vim.api.nvim_set_hl(0, "LineNR",
 		{ background = "None", foreground = palette.ebony })
@@ -51,6 +50,20 @@ local apply = function()
 		{ background = "None", foreground = palette.shadow })
 	vim.api.nvim_set_hl(0, "DiagnosticError",
 		{ background = "None", foreground = palette.english_lavender })
+	vim.api.nvim_set_hl(0, "NormalFloat",
+		{ background = "None", foreground = "None" })
+	vim.api.nvim_set_hl(0, "FloatBorder",
+		{ background = "None", foreground = "None" })
 end
 
-apply()
+M.opts = {
+	transparent_bg = false
+}
+
+function M.setup(opts)
+	if opts.transparent_bg == true then
+		print "Want Transparent"
+	end
+end
+
+return M
