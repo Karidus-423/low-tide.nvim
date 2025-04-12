@@ -50,20 +50,20 @@ function M.Paint()
 		{ background = "None", foreground = palette.shadow })
 	vim.api.nvim_set_hl(0, "DiagnosticError",
 		{ background = "None", foreground = palette.english_lavender })
-	vim.api.nvim_set_hl(0, "NormalFloat",
-		{ background = "None", foreground = "None" })
-	vim.api.nvim_set_hl(0, "FloatBorder",
-		{ background = "None", foreground = "None" })
 end
 
 M.opts = {
-	transparent_bg = false
+	transparent_bg = false,
 }
 
 function M.setup(opts)
 	if opts.transparent_bg == true then
-		print "Want Transparent"
+		vim.api.nvim_set_hl(0, "NormalFloat",
+			{ background = "None", foreground = "None" })
+		vim.api.nvim_set_hl(0, "FloatBorder",
+			{ background = "None", foreground = "None" })
 	end
+	M.Paint()
 end
 
 return M
