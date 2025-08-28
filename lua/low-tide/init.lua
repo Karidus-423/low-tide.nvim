@@ -1,4 +1,6 @@
 --COLORSCHEME: LOW-TIDE
+local M = {}
+
 local palette = {
 	bronze = "#727358",
 	slate_gray = "#4e635a",
@@ -12,8 +14,6 @@ local palette = {
 	outer_space = "#303E37",
 	feldgrau = "#3F6152",
 }
-
-local M = {}
 
 function M.Paint()
 	vim.g.colors_name = "low-tide"
@@ -123,10 +123,6 @@ function M.Paint()
 	vim.api.nvim_set_hl(0, "MiniHipatternsHack", --HACK
 		{ background = palette.artichoke, foreground = palette.cadet, italic = true })
 end
-
-M.opts = {
-	transparent_bg = false,
-}
 
 function M.setup(opts)
 	opts = opts or {}
